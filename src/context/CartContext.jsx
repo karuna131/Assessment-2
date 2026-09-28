@@ -8,10 +8,10 @@ function CartProvider({children}) {
 
     useEffect(()=>{
         async function fetchData(){
-            const responce = await fetch(`https://fakestoreapi.com/products`);
+            const responce = await fetch(`https://dummyjson.com/products`);
             const data = await responce.json();
             console.log(data)
-            setProducts(data);
+            setProducts(data.products);
         }
         fetchData();
     }, [])
